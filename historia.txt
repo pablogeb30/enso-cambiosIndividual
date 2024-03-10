@@ -1,6 +1,6 @@
 git clone git@github.com:pablogeb30/enso-cambiosIndividual.git
 
-git add .
+LOS GIT ADD LOS IGNORAMOS SON REDUNDANTES
 
 git commit -m "[content]: añadida estructura de ficheros, incluyendo version 1 del proceso de control de cambios y plantillas"
 
@@ -8,3 +8,30 @@ git tag vR1 a6f6a80
 
 git checkout -b Mejoras
 
+git commit -m "[content]: creada rama de mejoras e inclusion de documento de propuestas"
+
+git commit -m "[fix]: cambios aplicados sobre el documento de proceso de control de cambios"
+
+git switch main
+
+git merge Mejoras
+
+git branch -d Mejoras
+
+git commit -m "[content]: borrado el pdf con las propuestas de mejora"
+
+git tag vR2 90d9c39
+
+git commit -m "[content]: modificacion del documento de proceso de control de cambios a la version 3"
+
+git reset 90d9c39
+
+git commit -m "[content]: actualizacion del documento de proceso de control de cambios a la version 3 e inclusion de plantillas v2"
+
+git tag vR3 e81af32
+
+git push
+
+git pull
+
+git diff historia.txt
