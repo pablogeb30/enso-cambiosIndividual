@@ -1,2 +1,10 @@
 git clone git@github.com:pablogeb30/enso-cambiosIndividual.git
 
+git add .
+
+git commit -m "[content]: añadida estructura de ficheros, incluyendo version 1 del proceso de control de cambios y plantillas"
+
+git tag vR1 a6f6a80
+
+git checkout -b Mejoras
+
