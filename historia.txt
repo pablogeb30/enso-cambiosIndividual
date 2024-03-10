@@ -1,37 +1,75 @@
+Creamos el repositorio en GitHub y lo clonamos en nuestra máquina:
+
 git clone git@github.com:pablogeb30/enso-cambiosIndividual.git
 
-LOS GIT ADD LOS IGNORAMOS SON REDUNDANTES
+Creamos el primer commit después de crear los directorios junto con las plantillas y el documento inicial del proceso de control de cambios:
 
 git commit -m "[content]: añadida estructura de ficheros, incluyendo version 1 del proceso de control de cambios y plantillas"
 
+Creamos la etiqueta correspondiente a la primera versión:
+
 git tag vR1 a6f6a80
+
+Con el comando checkout -b creamos una rama nueva y nos situamos en ella:
 
 git checkout -b Mejoras
 
+Guardamos estos cambios realizando un commit:
+
 git commit -m "[content]: creada rama de mejoras e inclusion de documento de propuestas"
 
+Se aplican los cambios en el documento para crear la versión 2:
+
 git commit -m "[fix]: cambios aplicados sobre el documento de proceso de control de cambios"
+
+Nos cambiamos a la rama main para hacer el posterior merge:
 
 git switch main
 
 git merge Mejoras
 
+Borramos la rama de Mejoras anteriormente creada:
+
 git branch -d Mejoras
+
+Realizamos un commit tras borrar la rama y el documento pdf con las propuestas de mejora, así queda solamente el documento con la versión 2:
 
 git commit -m "[content]: borrado el pdf con las propuestas de mejora"
 
+Creamos la etiqueta correspondiente a la versión 2:
+
 git tag vR2 90d9c39
+
+Actualizamos el documento con la versión 3 sin modificar las plantillas:
 
 git commit -m "[content]: modificacion del documento de proceso de control de cambios a la version 3"
 
+Nos damos cuenta que faltan por actualizar las plantillas y volvemos al commit anterior:
+
 git reset 90d9c39
+
+Una vez incluidas las plantillas realizamos un commit para guardar los cambios:
 
 git commit -m "[content]: actualizacion del documento de proceso de control de cambios a la version 3 e inclusion de plantillas v2"
 
+Creamos la etiqueta correspondiente a la versión 3:
+
 git tag vR3 e81af32
+
+Actualizamos el repositorio remoto:
 
 git push
 
+Comprobamos que no hay cambios en el repositorio remoto:
+
 git pull
 
+Comprobamos la diferencia entre el ultimo commit y el estado actual del fichero local historia.txt:
+
 git diff historia.txt
+
+Notas adicionales:
+
+  - Los git add son redundantes y no se incluyen en la lista anterior de comandos. Se ejecuta el comando git add . siempre antes de hacer un commit para añadir los ficheros modificados al área staged.
+
+  - Al trabajar en Mac se generan archivos ocultos .DS_Store que no deben ser tenidos en cuenta.
